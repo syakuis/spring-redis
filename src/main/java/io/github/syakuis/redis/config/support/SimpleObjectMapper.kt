@@ -1,4 +1,4 @@
-package io.github.syakuis.config.support;
+package io.github.syakuis.redis.config.support;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect
 import com.fasterxml.jackson.annotation.PropertyAccessor
