@@ -1,0 +1,5 @@
+###
+POST http://localhost:8080/log/v1/logs
+
+###
+GET http://localhost:8080/log/v1/logs

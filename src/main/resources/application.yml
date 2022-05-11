@@ -13,3 +13,4 @@ spring:
     banner-mode: console
   redis:
     host: localhost
+    port: 6379
