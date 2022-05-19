@@ -1,4 +1,4 @@
-package io.github.syakuis.redis.domain
+package io.github.syakuis.redis.log.domain
 
 /**
  * @author Seok Kyun. Choi.

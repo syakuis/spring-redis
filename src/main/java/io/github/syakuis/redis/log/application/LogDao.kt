@@ -1,8 +1,8 @@
-package io.github.syakuis.redis.application
+package io.github.syakuis.redis.log.application
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import io.github.syakuis.redis.domain.Log
-import io.github.syakuis.redis.domain.LogRepository
+import io.github.syakuis.redis.log.domain.Log
+import io.github.syakuis.redis.log.domain.LogRepository
 import org.springframework.data.redis.core.ListOperations
 import org.springframework.data.redis.core.RedisTemplate
 import org.springframework.stereotype.Service

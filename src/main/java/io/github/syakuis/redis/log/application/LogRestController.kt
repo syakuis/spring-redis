@@ -1,6 +1,6 @@
-package io.github.syakuis.redis.application
+package io.github.syakuis.redis.log.application
 
-import io.github.syakuis.redis.domain.Log
+import io.github.syakuis.redis.log.domain.Log
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping

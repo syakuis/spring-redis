@@ -3,3 +3,13 @@ POST http://localhost:8080/log/v1/logs
 
 ###
 GET http://localhost:8080/log/v1/logs
+
+###
+
+POST http://localhost:8080/sample/v1/samples
+
+기타
+
+###
+
+GET http://localhost:8080/sample/v1/samples

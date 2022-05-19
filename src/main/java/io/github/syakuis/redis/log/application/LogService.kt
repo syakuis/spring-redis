@@ -1,6 +1,6 @@
-package io.github.syakuis.redis.application
+package io.github.syakuis.redis.log.application
 
-import io.github.syakuis.redis.domain.Log
+import io.github.syakuis.redis.log.domain.Log
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
