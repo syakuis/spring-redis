@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.data.redis.connection.RedisConnectionFactory
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory
 import org.springframework.data.redis.core.RedisTemplate
+import org.springframework.data.redis.serializer.StringRedisSerializer
 
 /**
  * @author Seok Kyun. Choi.
@@ -29,13 +30,16 @@ class RedisConfiguration {
     fun redisTemplate(): RedisTemplate<String, ByteArray> {
         val redisTemplate: RedisTemplate<String, ByteArray> = RedisTemplate()
         redisTemplate.setConnectionFactory(redisConnectionFactory())
+        redisTemplate.keySerializer = StringRedisSerializer()
+
         return redisTemplate
     }
 
     @Bean
-    fun ticketRedisTemplate(): RedisTemplate<ByteArray, ByteArray> {
-        val redisTemplate: RedisTemplate<ByteArray, ByteArray> = RedisTemplate()
+    fun ticketRedisTemplate(): RedisTemplate<String, ByteArray> {
+        val redisTemplate: RedisTemplate<String, ByteArray> = RedisTemplate()
         redisTemplate.setConnectionFactory(redisConnectionFactory())
+        redisTemplate.keySerializer = StringRedisSerializer()
         return redisTemplate
     }
 }

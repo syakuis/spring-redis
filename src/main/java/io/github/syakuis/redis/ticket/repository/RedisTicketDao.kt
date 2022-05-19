@@ -1,6 +1,6 @@
 package io.github.syakuis.redis.ticket.repository
 
-import io.github.syakuis.redis.ticket.domain.Ticket
+import io.github.syakuis.redis.domain.Ticket
 import io.github.syakuis.redis.ticket.port.out.TicketDaoPort
 import org.springframework.data.redis.core.RedisTemplate
 import org.springframework.stereotype.Repository
@@ -10,18 +10,18 @@ import org.springframework.stereotype.Repository
  * @since 2022-05-19
  */
 @Repository
-class RedisTicketDao(val ticketRedisTemplate: RedisTemplate<ByteArray, ByteArray>) : TicketDaoPort {
+class RedisTicketDao(val ticketRedisTemplate: RedisTemplate<String, ByteArray>) : TicketDaoPort {
     companion object {
         private const val KEY = "ticket:"
     }
 
     private fun keyGen(productId: String): String {
-        return KEY + productId
+        return "$KEY$productId"
     }
 
     override fun save(ticket: Ticket): Ticket {
         ticketRedisTemplate.opsForHash<String, Ticket>()
-            .put(keyGen(ticket.productId).encodeToByteArray(), ticket.id, ticket)
+            .put(keyGen(ticket.productId), ticket.id, ticket)
 
         return ticket
     }
@@ -31,8 +31,7 @@ class RedisTicketDao(val ticketRedisTemplate: RedisTemplate<ByteArray, ByteArray
     }
 
     override fun findAll(): List<Ticket> {
-        return ticketRedisTemplate.opsForHash<String, Ticket>().entries(keyGen("*").encodeToByteArray())
-            .map { entry -> entry.value }
+        return ticketRedisTemplate.opsForHash<String, Ticket>().values(keyGen("*"))
     }
 
     override fun findByProductId(productId: String): List<Ticket> {

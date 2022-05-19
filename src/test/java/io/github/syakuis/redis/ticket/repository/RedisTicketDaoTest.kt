@@ -1,6 +1,6 @@
 package io.github.syakuis.redis.ticket.repository
 
-import io.github.syakuis.redis.ticket.domain.TicketDto
+import io.github.syakuis.redis.domain.TicketDto
 import io.kotest.core.spec.style.BehaviorSpec
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired

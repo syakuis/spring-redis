@@ -1,6 +1,6 @@
 package io.github.syakuis.redis.ticket.port.out
 
-import io.github.syakuis.redis.ticket.domain.Ticket
+import io.github.syakuis.redis.domain.Ticket
 
 /**
  * @author Seok Kyun. Choi.

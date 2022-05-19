@@ -1,4 +1,4 @@
-package io.github.syakuis.redis.ticket.domain
+package io.github.syakuis.redis.domain
 
 import java.time.LocalDateTime
 
