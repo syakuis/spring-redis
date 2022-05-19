@@ -11,6 +11,8 @@ logging:
     org.hibernate.type.descriptor.sql.BasicExtractor: off
     org.hibernate.engine.jdbc.batch.internal.BatchingBatch: off
     org.springframework.cache: trace
+    redis.clients: trace
+    org.springframework.data: trace
 server:
   port: 8080
 spring:

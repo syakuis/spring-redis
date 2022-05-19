@@ -15,10 +15,10 @@ import org.springframework.data.redis.core.RedisTemplate
 class RedisConfiguration {
 
     @Value("\${spring.redis.host}")
-    val host: String = ""
+    private val host: String = ""
 
     @Value("\${spring.redis.port}")
-    val port: Int = 0
+    private val port: Int = 0
 
     @Bean
     fun redisConnectionFactory(): RedisConnectionFactory {
@@ -28,6 +28,13 @@ class RedisConfiguration {
     @Bean
     fun redisTemplate(): RedisTemplate<String, ByteArray> {
         val redisTemplate: RedisTemplate<String, ByteArray> = RedisTemplate()
+        redisTemplate.setConnectionFactory(redisConnectionFactory())
+        return redisTemplate
+    }
+
+    @Bean
+    fun ticketRedisTemplate(): RedisTemplate<ByteArray, ByteArray> {
+        val redisTemplate: RedisTemplate<ByteArray, ByteArray> = RedisTemplate()
         redisTemplate.setConnectionFactory(redisConnectionFactory())
         return redisTemplate
     }
