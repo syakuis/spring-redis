@@ -16,12 +16,12 @@ class RedisTicketDao(val ticketRedisTemplate: RedisTemplate<String, ByteArray>) 
     }
 
     private fun keyGen(productId: String): String {
-        return "$KEY$productId"
+        return KEY
     }
 
     override fun save(ticket: Ticket): Ticket {
         ticketRedisTemplate.opsForHash<String, Ticket>()
-            .put(keyGen(ticket.productId), ticket.id, ticket)
+            .put(keyGen(ticket.productId), ticket.productId, ticket)
 
         return ticket
     }
