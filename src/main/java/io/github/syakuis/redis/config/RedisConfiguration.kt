@@ -35,11 +35,20 @@ class RedisConfiguration {
         return redisTemplate
     }
 
-    @Bean
+    @Bean("ticketRedisTemplate")
     fun ticketRedisTemplate(): RedisTemplate<String, ByteArray> {
         val redisTemplate: RedisTemplate<String, ByteArray> = RedisTemplate()
         redisTemplate.setConnectionFactory(redisConnectionFactory())
         redisTemplate.keySerializer = StringRedisSerializer()
+        return redisTemplate
+    }
+
+    @Bean("testRedisTemplate")
+    fun testRedisTemplate(): RedisTemplate<String, ByteArray> {
+        val redisTemplate: RedisTemplate<String, ByteArray> = RedisTemplate()
+        redisTemplate.setConnectionFactory(redisConnectionFactory())
+        redisTemplate.keySerializer = StringRedisSerializer()
+
         return redisTemplate
     }
 }
