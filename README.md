@@ -1,30 +1,11 @@
-# Spring Gradle Template
+# Spring Redis
 
-## Installing Gradle
+## 주제
 
-https://docs.gradle.org/current/userguide/installation.html
-
-spring boot 2.3.x 부터 gradle 6.x 버전 필요
-
-```
-$ ./gradlew wrapper --gradle-version=6.5
-```
-
-## 개발
-
-기본적으로 개발 모드 profile 의 설정으로 구동됩니다.
-
-개인적으로 로컬 설정이 필요한 경우 `application-default.yml` 파일을 생성하여 사용하세요.
-
-## 테스트
-
-참고: https://www.jetbrains.com/help/idea/work-with-tests-in-gradle.html#configure_gradle_test_runner
-
-테스트 실행시 spring profile 이 자동으로 test 설정되도록 아래와 같이 설정이 필요합니다.
-
-```
-IntelliJ IDEA > Build, Execution, Deployment > Build Tools > Gradle 메뉴에서
-
-Build and run using: Gradle
-Run tests using: Gradle
-```
+- Redis cache
+- Redis pub/sub
+- Redis store
+- Final Catch
+  - 일련의 작업으로 동시적으로 처리할때 최종 완료된 시점으로 알기 위한 기능 구현
+  - 최종 완료 시점을 빠르고 정확하게 판단하기 한다.
+  - redis 뿐만 아니라 kafka, rabbitmq 모두 지원할 것.
