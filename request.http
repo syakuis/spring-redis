@@ -24,3 +24,12 @@ POST http://localhost:8080/pub-sub/v1/notifies
 Content-Type: text/plain
 
 AAA
+
+###
+
+POST http://localhost:8080/api/v1/notifies
+Content-Type: application/json
+
+{
+    "message": "우편물이 도착했습니다."
+}
